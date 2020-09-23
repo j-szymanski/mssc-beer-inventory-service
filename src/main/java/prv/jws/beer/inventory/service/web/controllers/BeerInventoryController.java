@@ -1,17 +1,18 @@
 package prv.jws.beer.inventory.service.web.controllers;
 
-import prv.jws.beer.inventory.service.repositories.BeerInventoryRepository;
-import prv.jws.beer.inventory.service.web.mappers.BeerInventoryMapper;
-import prv.jws.beer.inventory.service.web.model.BeerInventoryDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+import prv.jws.beer.inventory.service.repositories.BeerInventoryRepository;
+import prv.jws.beer.inventory.service.web.mappers.BeerInventoryMapper;
+import prv.jws.beer.inventory.service.web.model.BeerInventoryDto;
 
 /**
  * Created by jt on 2019-05-31.
@@ -25,7 +26,7 @@ public class BeerInventoryController {
     private final BeerInventoryMapper beerInventoryMapper;
 
     @GetMapping("api/v1/beer/{beerId}/inventory")
-    List<BeerInventoryDto> listBeersById(@PathVariable UUID beerId){
+    List<BeerInventoryDto> listBeerInventoryByBeerId(@PathVariable UUID beerId){
         log.debug("Finding Inventory for beerId:" + beerId);
 
         return beerInventoryRepository.findAllByBeerId(beerId)

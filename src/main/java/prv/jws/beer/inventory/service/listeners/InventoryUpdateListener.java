@@ -1,4 +1,4 @@
-package prv.jws.beer.inventory.service.services;
+package prv.jws.beer.inventory.service.listeners;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -7,9 +7,9 @@ import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Service;
 import prv.jws.beer.inventory.service.config.JmsConfig;
 import prv.jws.beer.inventory.service.domain.BeerInventory;
-import prv.jws.beer.inventory.service.repositories.BeerInventoryRepository;
-import prv.jws.brewery.dto.BeerDto;
 import prv.jws.brewery.events.NewInventoryEvent;
+import prv.jws.beer.inventory.service.repositories.BeerInventoryRepository;
+import prv.jws.brewery.model.BeerDto;
 
 @Slf4j
 @Service
@@ -18,8 +18,14 @@ public class InventoryUpdateListener {
     private final BeerInventoryRepository  beerInventoryRepository;
 
     @JmsListener(destination = JmsConfig.NEW_INVENTORY_QUEUE)
-    public void listenForBrewingRequest(NewInventoryEvent event) {
+    public void listenForNewInventory(NewInventoryEvent event) {
         BeerDto beerDto = event.getBeerDto();
+
+        log.info("---------------------  Handling New Inventory event ------------------------");
+        log.info("Beer id {}",  beerDto.getId());
+        log.info("Beer name {}/{}", beerDto.getBeerName(), beerDto.getBeerStyle());
+        log.info("UPC {}", beerDto.getUpc());
+        log.info("Quantity Brewed (quantity on hand) {}", beerDto.getQuantityOnHand());
 
         BeerInventory beerInventory = BeerInventory.builder()
                 .beerId(beerDto.getId())
@@ -30,5 +36,6 @@ public class InventoryUpdateListener {
 
         log.debug(">>>   Brewed beer {}/{} ", beerDto.getBeerName(), beerDto.getBeerStyle());
         log.debug(">>>   New inventory quantity {} ", beerDto.getQuantityOnHand());
+        log.info("---------------------               EOM              ------------------------");
     }
 }

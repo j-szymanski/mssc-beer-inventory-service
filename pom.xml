@@ -12,16 +12,8 @@
     <name>mssc-beer-inventory-service</name>
     <description>MSSC Beer Inventory Service</description>
 
-    <properties>
-        <mssc-brewery-jar.version>0.0.1-SNAPSHOT</mssc-brewery-jar.version>
-    </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>prv.jws.brewery</groupId>
-            <artifactId>mssc-brewery-jar</artifactId>
-            <version>${mssc-brewery-jar.version}</version>
-        </dependency>
     </dependencies>
 
 </project>
