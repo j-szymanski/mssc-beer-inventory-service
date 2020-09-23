@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import prv.jws.beer.inventory.service.repositories.BeerInventoryRepository;
 import prv.jws.beer.inventory.service.web.mappers.BeerInventoryMapper;
-import prv.jws.beer.inventory.service.web.model.BeerInventoryDto;
+import prv.jws.brewery.model.BeerInventoryDto;
 
 /**
  * Created by jt on 2019-05-31.

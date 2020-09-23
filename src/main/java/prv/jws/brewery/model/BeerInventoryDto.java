@@ -1,4 +1,4 @@
-package prv.jws.beer.inventory.service.web.model;
+package prv.jws.brewery.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
