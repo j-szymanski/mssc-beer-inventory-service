@@ -4,15 +4,15 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.jms.annotation.JmsListener;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 import prv.jws.beer.inventory.service.config.JmsConfig;
 import prv.jws.beer.inventory.service.domain.BeerInventory;
-import prv.jws.brewery.events.NewInventoryEvent;
 import prv.jws.beer.inventory.service.repositories.BeerInventoryRepository;
+import prv.jws.brewery.events.NewInventoryEvent;
 import prv.jws.brewery.model.BeerDto;
 
 @Slf4j
-@Service
+@Component
 @RequiredArgsConstructor
 public class InventoryUpdateListener {
     private final BeerInventoryRepository  beerInventoryRepository;
