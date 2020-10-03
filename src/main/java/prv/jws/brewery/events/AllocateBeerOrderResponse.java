@@ -15,7 +15,7 @@ import prv.jws.brewery.model.BeerOrderDto;
 @AllArgsConstructor
 @Builder
 public class AllocateBeerOrderResponse {
-    private BeerOrderDto beerOrder;
+    private BeerOrderDto beerOrderDto;
     private Boolean allocationError = false;
     private Boolean pendingInventory = false;
 }

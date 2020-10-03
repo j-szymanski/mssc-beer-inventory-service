@@ -22,7 +22,8 @@ public class AllocationRequestListener {
     @JmsListener(destination = JmsConfig.ALLOCATE_ORDER_QUEUE)
     public void listenForNewInventory(AllocateBeerOrderRequest event) {
         final AllocateBeerOrderResponseBuilder builder = AllocateBeerOrderResponse.builder();
-        builder.beerOrder(event.getBeerOrderDto());
+        builder.beerOrderDto(event.getBeerOrderDto());
+        builder.allocationError(false);
 
         try {
             final Boolean allocationResult = allocationService.allocateOrder(event.getBeerOrderDto());
