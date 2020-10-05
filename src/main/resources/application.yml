@@ -4,11 +4,6 @@ spring:
   zipkin:
     enabled: false
 
-  #docker ActiveMQ user and password
-  artemis:
-    user: jurek
-    password: 1Dlaczegonie
-
   datasource:
     url: jdbc:h2:mem:testdb;MODE=MYSQL
   h2:
