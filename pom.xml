@@ -12,6 +12,9 @@
     <name>mssc-beer-inventory-service</name>
     <description>MSSC Beer Inventory Service</description>
 
+    <properties>
+        <logback-encoder.version>6.3</logback-encoder.version>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -25,6 +28,11 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-zipkin</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.logstash.logback</groupId>
+            <artifactId>logstash-logback-encoder</artifactId>
+            <version>${logback-encoder.version}</version>
         </dependency>
     </dependencies>
 
