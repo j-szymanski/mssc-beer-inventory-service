@@ -10,6 +10,11 @@ spring:
     console:
       enabled: true
 
+  security:
+    user:
+      name: good
+      password: beer
+
   # Spring Data hangs when not set under Spring Boot 2.3.0
   data:
     jpa:
