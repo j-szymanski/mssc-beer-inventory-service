@@ -65,12 +65,7 @@
                         "span_id": "%mdc{X-B3-SpanId}",
                         "parent_span_id": "%mdc{X-B3-ParentSpanId}",
                         "exportable": "%mdc{X-Span-Export}"
-                        },
-                        "baggage": "%X{key:-}",
-                        "pid": "${PID:-}",
-                        "thread": "%thread",
-                        "class": "%logger{40}",
-                        "rest": "%message"
+                        }
                         }
                     </pattern>
                 </pattern>
