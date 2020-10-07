@@ -17,4 +17,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         .and()
         .httpBasic();
     }
+//    @Bean
+//    public HttpTraceRepository httpTraceRepository(){
+//        return new InMemoryHttpTraceRepository();
+//    }
 }
